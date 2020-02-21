@@ -1,3 +1,3 @@
-import initializeDetailButtonEvents from './dialog.js';
+import initializeDetailButtonEvents from './dialog.js'
 
-initializeDetailButtonEvents();
+initializeDetailButtonEvents()
