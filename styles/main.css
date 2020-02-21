@@ -2,6 +2,27 @@
 @import 'fish.css';
 @import 'tips.css';
 
+/*Typography
+--------------------------------------------------------------*/
+
+body, button, input, select, textarea {
+    color: #404040;
+    font-family: "Comfortaa", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Patua One", serif;
+    letter-spacing: 2px;
+}
+
+body {
+    background-color: #2fda7169;
+}
+
 .container {
     display: flex;
     flex-wrap: nowrap;
@@ -10,4 +31,5 @@
 
 .bordered {
     border: 1px dashed goldenrod;
+    background-color: #5c56bd68;
 }
