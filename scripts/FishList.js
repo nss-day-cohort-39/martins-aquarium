@@ -3,21 +3,12 @@ import Fish from "./Fish.js";
 
 const contentTarget = document.querySelector(".fishList")
 
-const renderFish = collection => {
-    for (const fishObject of collection) {
-        contentTarget.innerHTML += Fish(fishObject)
-    }
-}
+const render = collection =>
+    collection.forEach(fish => contentTarget.innerHTML += Fish(fish))
 
 const FishList = () => {
-    let holyFish = mostHolyFish()
-    renderFish(holyFish)
-
-    let soldiers = soldierFish()
-    renderFish(soldiers)
-
-    let plebs = nonHolyFish()
-    renderFish(plebs)
+    const fish = mostHolyFish().concat(soldierFish()).concat(nonHolyFish())
+    render(fish)
 }
 
 export default FishList

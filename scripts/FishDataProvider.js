@@ -22,7 +22,7 @@ const fishCollection = [
         food: ["Algae", "Crustaceans"]
     },
     {
-        length: 9,
+        length: 15,
         species: "Clownfish",
         food: ["Plankton"],
         location: "Great Barrier Reef",
