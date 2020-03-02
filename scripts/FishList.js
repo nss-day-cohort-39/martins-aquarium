@@ -1,30 +1,22 @@
-import { useFish, mostHolyFish, soldierFish, nonHolyFish } from "./FishDataProvider.js";
+import { mostHolyFish, soldierFish, nonHolyFish, useFish } from "./FishDataProvider.js";
 import Fish from "./Fish.js";
 
 const contentTarget = document.querySelector(".fishList")
 
+const render = fish => contentTarget.innerHTML += fish.map(Fish).join("")
+
 const FishList = () => {
-    let fishObjectsArray = mostHolyFish()
+    // Render fish that are evenly divisible by 3
+    const holy = mostHolyFish()
+    render(holy)
 
-    for (const fishObject of fishObjectsArray) {
-        const fishHTMLRepresentation = Fish(fishObject)
-        contentTarget.innerHTML += fishHTMLRepresentation
+    // Render fish that are evenly divisible by 5
+    const soldiers = soldierFish()
+    render(soldiers)
 
-    }
-
-    fishObjectsArray = soldierFish()
-
-    for (const fishObject of fishObjectsArray) {
-        const fishHTMLRepresentation = Fish(fishObject)
-        contentTarget.innerHTML += fishHTMLRepresentation
-    }
-
-    fishObjectsArray = nonHolyFish()
-
-    for (const fishObject of fishObjectsArray) {
-        const fishHTMLRepresentation = Fish(fishObject)
-        contentTarget.innerHTML += fishHTMLRepresentation
-    }
+    // Render all other fish
+    const plebs = nonHolyFish()
+    render(plebs)
 }
 
 export default FishList
